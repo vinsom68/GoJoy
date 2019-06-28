@@ -2,10 +2,10 @@
 
 Download Ruby    https://rubyinstaller.org/downloads/
 
-Download ChromeDriver and put it into c:\\Windows     https://sites.google.com/a/chromium.org/chromedriver/downloads
+Download ChromeDriver and put it into c:\\Windows :      https://sites.google.com/a/chromium.org/chromedriver/downloads
 
-At command line:   gem install watir
+At command line run:   gem install watir
 
-Create a .bat file with: ruby "G:\Software Code\GoJoy\GoJoy.rb"  YourLoginEmail YourPassword
+Create a .bat file with: ruby "YourPathToGoJoyScript\GoJoy.rb"  YourLoginEmail YourPassword
 
 Set up task scheduler to run every hour the bat file above
