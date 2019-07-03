@@ -1,6 +1,9 @@
-﻿
+﻿# add google auth
+#  https://github.com/mdp/rotp
 
-require 'watir-webdriver'
+
+
+require 'watir'
 
 b = Watir::Browser.new :chrome
  
