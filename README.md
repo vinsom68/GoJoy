@@ -11,3 +11,5 @@ gem install rotp
 Create a .bat file with: ruby "YourPathToGoJoyScript\GoJoy.rb"  YourLoginEmail YourPassword GoogleSecret
 
 Set up task scheduler to run every hour the bat file above
+
+
