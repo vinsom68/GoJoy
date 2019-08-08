@@ -32,7 +32,7 @@ sleep(2)
 
 b.goto "https://member.gojoy.com/rewards"
 sleep(5)
-l = b.buttons :class => 'btn font-size-24 d-flex justify-content-between align-items-center rounded btn-danger btn-block'
+l = b.buttons :class => "btn font-size-24 d-flex justify-content-between align-items-center rounded btn-danger btn-block"
 l[0].exists?
 l[0].click
 sleep(2)
