@@ -28,7 +28,7 @@ b.text_field(:id, 'googleAuthCode').set(totp.now)
 GAuth = b.buttons :class => "btn btn-block btn-info d-flex justify-content-center"
 GAuth[0].exists?
 GAuth[0].click
-sleep(2)
+sleep(3)
 
 b.goto "https://member.gojoy.com/rewards"
 sleep(5)
