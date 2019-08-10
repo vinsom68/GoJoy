@@ -4,7 +4,12 @@ require 'rubygems'
 require 'rotp'
 require 'watir'
 
-b = Watir::Browser.new :chrome
+#b = Watir::Browser.new :chrome
+
+b = Watir::Browser.new(:chrome,
+                      :prefs => {:password_manager_enable => false, :credentials_enable_service => false},
+                      :switches => ["disable-infobars", "no-sandbox"])
+
 totp = ROTP::TOTP.new(ARGV[2])
 
 
