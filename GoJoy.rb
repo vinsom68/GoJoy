@@ -35,8 +35,12 @@ GAuth[0].exists?
 GAuth[0].click
 sleep(3)
 
-b.goto "https://member.gojoy.com/rewards"
+#b.goto "https://member.gojoy.com/rewards"
+b.link(:text =>"积分奖励").when_present.click
+b.link(:text =>"Claim Rewards").when_present.click
 sleep(5)
+
+
 l = b.buttons :class => "btn font-size-24 d-flex justify-content-between align-items-center rounded btn-danger btn-block"
 l[0].exists?
 l[0].click
