@@ -37,13 +37,16 @@ sleep(3)
 
 #b.goto "https://member.gojoy.com/rewards"
 b.link(:text =>"积分奖励").when_present.click
-b.link(:text =>"Claim Rewards").when_present.click
+#b.link(:text =>"Claim Rewards").when_present.click
 sleep(5)
 
 
-l = b.buttons :class => "btn font-size-24 d-flex justify-content-between align-items-center rounded btn-danger btn-block"
-l[0].exists?
-l[0].click
+#l = b.buttons :class => "btn font-size-24 d-flex justify-content-between align-items-center rounded btn-danger btn-block"
+#l[0].exists?
+#l[0].click
+
+b.button(:text =>"立即领取").when_present.click
+#b.button(:text =>"CLAIM NOW").when_present.click
 sleep(2)
 
 b.close
