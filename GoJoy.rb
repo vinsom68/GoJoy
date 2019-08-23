@@ -45,8 +45,61 @@ sleep(5)
 #l[0].exists?
 #l[0].click
 
-b.button(:text =>"立即领取").when_present.click
-#b.button(:text =>"CLAIM NOW").when_present.click
+if b.button(:text =>"立即领取").present?
+    b.button(:text =>"立即领取").click
+    #b.button(:text =>"CLAIM NOW").when_present.click
+    sleep(2)
+end
+
+
+##### convert JUSD to JOY
+b.link(:text =>"钱包").when_present.click
+#b.link(:text =>"My Assets").when_present.click
+sleep(3)
+puts 'BACK TO MY ASSETS'
+
+numJoyDollar=b.divs(class: "font-weight-bold")[1].child().text
+valJoy=b.tds(class: "text_center")[1].child().text
+valJoy[0]=''
+
+rate=numJoyDollar.to_f/valJoy.to_f
+
+puts numJoyDollar
+puts valJoy
+puts rate
+
+if numJoyDollar.to_f>0.10
+
+    #show textbox to put amount of joy to buy
+    b.divs(class: "lock_unlock_button unlock_button")[1].child().when_present.click
+    sleep(1)
+
+    #fill textbox
+    b.div(:text, '买入数量').following_sibling(index: 0).text_field(:class, 'van-field__control').set(rate)
+    sleep(1)
+
+    #click buy Joy
+    buyJoy = b.buttons :class => "font_medium font_size_16 van-button van-button--warning van-button--large"
+    buyJoy[1].exists?
+    buyJoy[1].click
+    sleep(1)
+
+    #confirm buy joy
+    if b.span(:text =>"确认").present?
+        b.span(:text =>"确认").click
+        sleep(2)
+    end
+
+end
+
+#lock joy
+b.divs(class: "item_lock")[0].child().child().following_sibling(index: 0).click  
 sleep(2)
+
+#confirm lock joy
+lockJoy = b.buttons :class => "font_medium font_size_16 van-button van-button--danger van-button--large"
+lockJoy[0].exists?
+lockJoy[0].click
+sleep(1)
 
 b.close
