@@ -68,7 +68,7 @@ puts numJoyDollar
 puts valJoy
 puts rate
 
-if numJoyDollar.to_f>0.10
+if numJoyDollar.to_f>0.01
 
     #show textbox to put amount of joy to buy
     b.divs(class: "lock_unlock_button unlock_button")[1].child().when_present.click
