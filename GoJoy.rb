@@ -85,8 +85,14 @@ if numJoyDollar.to_f>0.01
     sleep(1)
 
     #confirm buy joy
-    if b.span(:text =>"确认").present?
-        b.span(:text =>"确认").click
+    if b.button(:text =>"确认").present?  
+        b.button(:text =>"确认").click
+        sleep(2)
+    end
+
+    #confirm 2 buy joy
+    if b.div(:text =>"确认").present?
+        b.div(:text =>"确认").click
         sleep(2)
     end
 
