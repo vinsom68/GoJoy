@@ -35,6 +35,12 @@ GAuth[0].exists?
 GAuth[0].click
 sleep(3)
 
+#Change language
+b.button(:class =>"btn dropdown-toggle btn-link dropdown-toggle-no-caret").when_present.click    #btn dropdown-toggle btn-link dropdown-toggle-no-caret    __BVID__487__BV_toggle_
+sleep(2)
+b.link(:text =>"简体中文").when_present.click
+sleep(2)
+
 #b.goto "https://member.gojoy.com/rewards"
 b.link(:text =>"积分奖励").when_present.click
 #b.link(:text =>"Claim Rewards").when_present.click
@@ -91,7 +97,7 @@ if numJoyDollar.to_f>0.01
     end
 
     #confirm 2 buy joy
-    if b.div(:text =>"确认").present?
+    if b.div(:text =>"确认").present?  
         b.div(:text =>"确认").click
         sleep(2)
     end
